@@ -127,3 +127,4 @@ fi
 source <(ng completion script)
 export PATH=$PATH:/home/tomasz/.spicetify
 alias config='/usr/bin/git --git-dir=/home/tomasz/dotfiles --work-tree=/home/tomasz'
+alias dev='cd ~/Documents/programming'
