@@ -3,7 +3,7 @@
 
 # Preview
 <p align="center">
-  <img src"./preview.png"> 
+  <img src"![preview image](https://github.com/rikardoricz/dotfiles/blob/master/preview.png?raw=true)"> 
 </p>
 
 # Instalation
