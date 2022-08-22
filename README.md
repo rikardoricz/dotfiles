@@ -2,9 +2,7 @@
 <h4 align="center">dotfiles by rikardoricz based on OneDark theme</h4>
 
 # Preview
-<p align="center">
-  <img src"![preview image](https://github.com/rikardoricz/dotfiles/blob/master/preview.png?raw=true)"> 
-</p>
+![preview image](https://github.com/rikardoricz/dotfiles/blob/master/preview.png?raw=true)
 
 # Instalation
 ```bash
