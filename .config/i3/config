@@ -12,6 +12,7 @@ font pango:JetBrainsMono Nerd Font Regular 8
 # Gaps
 gaps inner 10
 # Border size
+for_window [class="^.*"] border pixel 3
 default_border pixel 3
 default_floating_border pixel 3
 
@@ -147,6 +148,7 @@ for_window [class="discord dpdater"] move container to workspace $ws5
 for_window [class="Caprine"] move container to workspace $ws5
 for_window [class="TelegramDesktop"] move container to workspace $ws5
 for_window [class="Yad" title="yad-calendar"] floating enable # calendar
+for_window [class="Thunar"] floating enable # file manager
 
 ########## Hardware ##########
 # fkeys and related variables
@@ -188,10 +190,11 @@ set $red "be5046"
 set $black "#282C34"
 set $fontLight "abb2bf"
 set $fontDark "282c34"
+set $darkGrey "4b5263"
 # CLASS                 BORDER      BACK       TEXT        INDICATOR
 client.focused          $green      $green     $black         $green
-client.focused_inactive $black      $black     $fontLight     $black
-client.unfocused        $black      $black     $fontLight     $black
+client.focused_inactive $darkGrey   $darkGrey  $fontLight     $black
+client.unfocused        $darkGrey   $darkGrey  $fontLight     $black
 client.urgent           $red        $black     $fontLight     $black
 client.placeholder      $black      $black     $fontLight     $black
 
@@ -205,9 +208,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # Screenshots
-bindsym Print exec --no-startup-id maim  "/home/$USER/Pictures/$(date +%s).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date +%s).png"
-bindsym Shift+Print exec --no-startup-id maim -o --select "/home/$USER/Pictures/$(date +%s).png"
+bindsym Print exec --no-startup-id maim  "/home/$USER/Pictures/Screenshots/$(date +%s).png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date +%s).png"
+bindsym Shift+Print exec --no-startup-id maim -o --select "/home/$USER/Pictures/Screenshots/$(date +%s).png"
 # Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
