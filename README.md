@@ -29,6 +29,7 @@
 | Mod + q | kill focused window |
 | Mod + Shift + r | restart wm | 
 | Mod + alt + l | lock screen (i3-lock-fancy) |
+| Alt + Space | Toggle keyboard layout |
 
 ## Apps
 | Key | App |
@@ -48,6 +49,7 @@
 | Fn + MuteMic | Mute mic |
 | Fn + BriDown | Brightness down |
 | Fn + BriUp | Brightness up |
+| Fn + Space | Toggle keyboard backlight |
 | AudioPlay | Play-pause |
 | AudioPause | Play-pause |
 | AudioNext | Play next |
