@@ -18,12 +18,12 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'preservim/nerdtree' |
+            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            "\ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mhinz/vim-startify'
@@ -68,7 +68,7 @@ if (empty($TMUX))
   endif
 endif
 
-"COLORSCHEME - onedark
+" COLORSCHEME - onedark
 syntax on
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
@@ -88,8 +88,10 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " prettier command for coc
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " run prettier on save
-"let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+" NERDTREE
 
 " vmap ++ <plug>NERDCommenterToggle
 " nmap ++ <plug>NERDCommenterToggle
@@ -98,7 +100,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
 
-" let g:NERDTreeGitStatusWithFlags = 1
+ let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:NERDTreeGitStatusNodeColorization = 1
 "let g:NERDTreeColorMapCustom = {
@@ -116,14 +118,13 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:NERDTreeIgnore = ['^node_modules$']
 
 
-"NERDTREE
 "nerdtree expand and collapse options
 let g:NERDTreeDirArrowExpandable='+' 
 let g:NERDTreeDirArrowCollapsable='-'
-" noremap <C-f> :NERDTreeFocus<CR>
-" noremap <C-n> :NERDTree<CR>
-" noremap <C-t> :NERDTreeToggle<CR>
-nmap <C-n> :NERDTree<CR>
+"nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> <Esc> :NERDTreeToggle<CR>
+inoremap <C-n> <Esc> :NERDTreeToggle<CR>
+"nmap <C-n> :NERDTree<CR>
 vmap <C-_> <plug>NERDCommenterToggle
 nmap <C-_> <plug>NERDCommenterToggle
 
@@ -146,7 +147,7 @@ endfunction
 "autocmd BufEnter * call SyncTree()
 
 
-"COC
+" COC
 let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-pairs',
