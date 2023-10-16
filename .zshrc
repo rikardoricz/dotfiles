@@ -131,5 +131,6 @@ source <(ng completion script)
 export PATH=$PATH:/home/tomasz/.spicetify
 alias config='/usr/bin/git --git-dir=/home/tomasz/dotfiles --work-tree=/home/tomasz'
 alias dev='cd ~/Documents/dev'
+alias pwr='cd ~/Documents/PWr'
 alias ytdl-podcast='youtube-dl -x --audio-format mp3 --write-info-json --write-thumbnail -o "~/Podcasts/%(title)s.%(ext)s"'
 alias ytdl-music='youtube-dl -x --audio-format mp3 --write-info-json --write-thumbnail -o "~/Music/%(title)s.%(ext)s"'

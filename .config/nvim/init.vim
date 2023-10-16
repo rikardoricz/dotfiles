@@ -1,6 +1,6 @@
 set number
 set cursorline
-" set relativenumber
+set relativenumber
 set autoindent smartindent
 set tabstop=4
 set softtabstop=4
@@ -18,34 +18,36 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'preservim/nerdtree' |
-            "\ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            "\ Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'preservim/nerdtree' didn't have updates :/
+"Plug 'Xuyuanp/nerdtree-git-plugin' didn't have updates :/
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'nvim-tree/nvim-tree.lua' " file explorer written in Lua 
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} " file explorer written in python
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'mhinz/vim-startify'
 Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'joshdick/onedark.vim' " onedark colorscheme
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " highlighting
 Plug 'romgrk/barbar.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ap/vim-css-color'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocompletion
+Plug 'ap/vim-css-color' " css colors highlight
 "Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdcommenter'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " fuzzy finder
 " Plug 'neovim/nvim-lspconfig'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'branch': 'release/0.x'
-  \ }
+"Plug 'prettier/vim-prettier', {
+  "\ 'do': 'yarn install --frozen-lockfile --production',
+  "\ 'branch': 'release/0.x'
+  "\ }
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'mattn/emmet-vim' " emmet like plugin
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " markdown preview in browser
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
 call plug#end()
 
 
@@ -86,10 +88,17 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 "let g:prettier#quickfix_enabled = 0
 "let g:prettier#quickfix_auto_focus = 0
 " prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+"command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " run prettier on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+" CHADTREE - file explorer written in python
+nnoremap <C-n> <cmd>CHADopen<cr>
+" recommended - add a hotkey to clear quickfix list:
+nnoremap <leader>l <cmd>call setqflist([])<cr>
+
+
 
 " NERDTREE
 
@@ -100,7 +109,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
 
- let g:NERDTreeGitStatusWithFlags = 1
+ "let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:NERDTreeGitStatusNodeColorization = 1
 "let g:NERDTreeColorMapCustom = {
@@ -115,33 +124,33 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
     "\ }                         
 
 
-let g:NERDTreeIgnore = ['^node_modules$']
+"let g:NERDTreeIgnore = ['^node_modules$']
 
 
 "nerdtree expand and collapse options
-let g:NERDTreeDirArrowExpandable='+' 
-let g:NERDTreeDirArrowCollapsable='-'
+"let g:NERDTreeDirArrowExpandable='+' 
+"let g:NERDTreeDirArrowCollapsable='-'
 "nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-n> <Esc> :NERDTreeToggle<CR>
-inoremap <C-n> <Esc> :NERDTreeToggle<CR>
+"nnoremap <C-n> <Esc> :NERDTreeToggle<CR>
+"inoremap <C-n> <Esc> :NERDTreeToggle<CR>
 "nmap <C-n> :NERDTree<CR>
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <C-_> <plug>NERDCommenterToggle
+"vmap <C-_> <plug>NERDCommenterToggle
+"nmap <C-_> <plug>NERDCommenterToggle
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
+"function! IsNERDTreeOpen()        
+  "return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+"endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+"function! SyncTree()
+  "if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    "NERDTreeFind
+    "wincmd p
+  "endif
+"endfunction
 
 " Highlight currently open buffer in NERDTree
 "autocmd BufEnter * call SyncTree()
@@ -424,3 +433,20 @@ let g:mkdp_filetypes = ['markdown']
 " set default theme (dark or light)
 " By default the theme is define according to the preferences of the system
 let g:mkdp_theme = 'dark'
+
+
+"VIMTEX - latex
+filetype plugin indent on
+
+let g:vimtex_view_method = 'zathura'
+"let g:vimtex_compiler_method = 'latexrun'
+" let maplocalleader = ","
+"
+
+" remap Esc to Tab to return to normal mode
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+cnoremap <Tab> <C-C><Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
