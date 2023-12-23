@@ -1,25 +1,20 @@
-<h1 align="center">Dotfiles</h1>
-<h4 align="center">dotfiles by rikardoricz based on OneDark theme</h4>
+# Dotfiles
+My arch linux dotfiles - onedark theme
 
-# Preview
-![preview image](https://github.com/rikardoricz/dotfiles/blob/master/preview.png?raw=true)
+![preview image](https://github.com/rikardoricz/dotfiles/blob/sway/preview.png?raw=true)
 
-# Instalation
-```bash
-    git clone https://github.com/rikardoricz/dotfiles.git && cd dotfiles
-    ./install.sh # have to add install script
-```
 
-# KeyBinds
-## General
+## KeyBinds
+### General
 | Key | Action |
 | --- | -------- |
 | Mod + [1-9] | focus on desktop 1-9 |
-| Mod + shift + [1-9] | move focused window to desktop 1-9 |
+| Mod + Shift + [1-9] | move focused window to desktop 1-9 |
 | Mod + r | mode resize (then press Arrows to shrink or grow window) |
-| Mod + shift + [Up,Down,Left,Right] | swap window |
+| Mod + x | mode powermenu (then press p/r/l/o) |
+| Mod + Shift + [Up,Down,Left,Right] | swap window |
 | Mod + Tab | toggle floating/tiling |
-| alt + Tab | toggle window focus |
+| Mod + Shift + Tab | toggle window focus |
 | Mod + Shift + f | toggle fullscreen |
 | Mod + h | split in horizontal orientation |
 | Mod + v | split in vertical orientation |
@@ -27,20 +22,17 @@
 | Mod + t | layout tabbed |
 | Mod + e | layout split |
 | Mod + q | kill focused window |
-| Mod + Shift + r | restart wm | 
-| Mod + alt + l | lock screen (i3-lock-fancy) |
-| Alt + Space | Toggle keyboard layout |
+| Mod + Shift + c | restart wm | 
 
-## Apps
+### Apps
 | Key | App |
 | --- | -------- |
-| Mod + Return | Alacritty |
-| Mod + d | Rofi |
-| Mod + p | Rofi powermenu |
-| Mod + w | Firefox |
-| Mod + f | File Manager |
+| Mod + Return | kitty |
+| Mod + d | wofi |
+| Mod + w | firefox |
+| Mod + f | thunar |
 
-## Hardware
+### Hardware
 | Key | App |
 | --- | -------- |
 | Fn + Mute | Mute |
@@ -55,26 +47,25 @@
 | AudioNext | Play next |
 | AudioPrev | Play previous |
 
-# Rice Specs
+## Rice Specs
 | Stuff | Programs |
 | ----- | -------- |
-| WM | i3-gaps |
-| Bar | Polybar |
-| Compositor | Picom (glx backend) |
-| AppLauncher | Rofi |
-| Font | JetBrainsMono Nerd Font |
-| LockScreen | i3-lock-fancy-dualmonitor |
-| Notifications | Dunst |
-| PDF reader | Zathura |
-| Shell | zsh + powerlevel10k |
-| Terminal | Alacritty |
+| wm | sway |
+| bar | waybar |
+| app launcher | wofi |
+| font | JetBrainsMono Nerd Font |
+| lock screen | swaylock-effects |
+| notifications | dunst |
+| PDF reader | zathura |
+| shell | zsh + powerlevel10k |
+| terminal | kitty |
 
 # Others
 | Category | App |
 | -------- | --- |
-| ImageViewer | feh |
-| MusicPlayer | musikcube |
-| VideoPlayer | VLC |
-| Screenshot | maim |
-| TextEditor | NeoVim |
-| FileManager | ranger, thunar |
+| image viewer | feh |
+| music player | musikcube |
+| video player | vlc |
+| screenshots | grimshot |
+| text editor | neovim |
+| file manager | thunar |
