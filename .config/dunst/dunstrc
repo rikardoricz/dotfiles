@@ -27,7 +27,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x45
+    offset = 0x30
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -62,7 +62,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 10 
+    transparency = 10
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -254,7 +254,7 @@
     # layer = top
 
     # Set this to true to use X11 output on Wayland.
-    force_xwayland = false
+    force_xwayland = true
 
     ### Legacy
 
@@ -301,7 +301,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#21222c"
+    background = "#282c34"
     foreground = "#c5c8c6"
     frame_color = "#e5c07b"
     timeout = 10
@@ -309,7 +309,7 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#21222c"
+    background = "#282c34"
     foreground = "#c5c8c6"
     frame_color = #d19a66"
     timeout = 10
@@ -416,8 +416,8 @@
 #    # This notification will not be saved in history
 #    summary = "foobar"
 #    history_ignore = yes
-    appname = changevolume
-    history_ignore = yes
+#    appname = changevolume
+#    history_ignore = yes
 #[skip-display]
 #    # This notification will not be displayed, but will be included in the history
 #    summary = "foobar"
