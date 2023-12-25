@@ -13,8 +13,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("lazy").setup("plugins")
-
--- onedark theme
--- telescope
--- treesitter
--- neo-tree
