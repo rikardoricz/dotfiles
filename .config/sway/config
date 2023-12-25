@@ -171,6 +171,7 @@ input "type:touchpad" {
     # We just use 1-10 as the default.
 
 # Assign workspace to monitor
+    workspace 1 output eDP-1
     workspace 1 output HDMI-A-2
     workspace 2 output HDMI-A-2
     workspace 3 output HDMI-A-2
