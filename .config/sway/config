@@ -16,12 +16,7 @@ font pango: JetBrainsMono Nerd Font Medium 12
 gaps inner 10
 default_border pixel 3
 default_floating_border pixel 3
-#titlebar_border_thickness 2
-
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+#titlebar_border_thickness 
 set $mod Mod4
 set $alt Mod1
 # Home row direction keys, like vim
@@ -171,7 +166,7 @@ input "type:touchpad" {
     # We just use 1-10 as the default.
 
 # Assign workspace to monitor
-    workspace 1 output eDP-1
+    # workspace 1 output eDP-1
     workspace 1 output HDMI-A-2
     workspace 2 output HDMI-A-2
     workspace 3 output HDMI-A-2
