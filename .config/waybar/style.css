@@ -9,7 +9,6 @@
 window#waybar {
   color: #dcddde;
   background-color: #21222c;
-  border-bottom: 1px solid #414868;
   transition-duration: 0.5s;
   transition-property: background-color;
 }
@@ -22,10 +21,12 @@ window#waybar {
   padding: 0 10px;
 }
 #workspaces button.focused {
-  color: #abb2bf;
-  border-bottom: 3px solid #98c379;
-  background-color: rgba(255, 255, 255, 0.1);
-  /*background: #414868; */
+  /*color: #abb2bf;*/ /* light */
+  color: #21222c; /* dark */
+  /*border-bottom: 3px solid #61afef;*/ /* blue */
+  border-bottom: 3px solid #98c379; /* green */
+  background-color: rgba(171, 178, 191, 0.5); /* light */
+  /*background-color: rgba(40, 44, 52, 0.9);*/ /* dark */
 }
 #workspaces button.urgent {
   color: #f7768e;
@@ -60,12 +61,6 @@ window#waybar {
   padding: 0 10px;
   color: #b5e8e0;
 }
-@keyframes blink {
-  to {
-    color: #abb2bf;
-    background-color: #282c34;
-  }
-}
 #battery.critical:not(.charging) {
   animation-name: blink;
   animation-duration: 0.5s;
@@ -81,4 +76,11 @@ window#waybar {
 }
 #idle_inhibitor {
   color: #b5e8e0;
+}
+
+@keyframes blink {
+  to {
+    color: #abb2bf;
+    background-color: #282c34;
+  }
 }

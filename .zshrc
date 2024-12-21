@@ -60,3 +60,12 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh                 # powerlevel10k
 export PATH=$PATH:/home/rikardo/.spicetify                   # spicetify
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh" # kitty issues with SSH
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GOBIN=$HOME/go/bin/
+
+# android studio, react native, expo
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
